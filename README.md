@@ -18,3 +18,5 @@ Thumbnails of non-video materials include:
 ### ✔ Bible reading tracker
 Both **Bible book names** and **chapter links** include:
 - **Checkboxes** so you can easily track your Bible reading progress
+
+![](images/jw_image2.png)
