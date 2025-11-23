@@ -2,4 +2,19 @@
 
 ![](images/jw_image1.png)
 
-This app adds 
+## Overview
+
+This userscript adds extra functionality on top of the jw.org website.
+
+### ✔ Video thumbnails
+Video thumbnails now include:
+- **Checkboxes** — mark videos you’ve already watched  
+- **Notes icon** — add and save your personal notes for each video
+
+### ✔ Other materials
+Thumbnails of non-video materials include:
+- **Checkboxes** to mark items you’ve already studied
+
+### ✔ Bible reading tracker
+Both **Bible book names** and **chapter links** include:
+- **Checkboxes** so you can easily track your Bible reading progress
