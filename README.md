@@ -24,3 +24,5 @@ Both **Bible book names** and **chapter links** include:
 ### ✔ Simple export/import of your notes and progress
 You can easily **export all your notes and checked items** into a JSON file with one click.  
 Later, you can **import the same file** to restore your study progress on another device or browser.
+
+![](images/jw_image3.png)
