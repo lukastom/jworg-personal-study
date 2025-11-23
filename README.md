@@ -1,2 +1,3 @@
-# jworg-personal-study
-Jw.org Tampermonkey script adding personal study features.
+# Jw.org Personal Study
+
+This app adds 
