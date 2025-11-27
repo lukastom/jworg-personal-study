@@ -9,6 +9,44 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
+// --- GM_* SHIM pro prostředí bez Tampermonkey (např. Safari + Userscripts na iPadu) ---
+// Na desktopu v Tampermonkey už GM_* existují, takže se tento kód NEspustí.
+
+if (typeof GM_getValue === 'undefined') {
+    function GM_getValue(key, defaultValue) {
+        try {
+            const raw = localStorage.getItem(key);
+            if (raw === null || raw === undefined) return defaultValue;
+            return JSON.parse(raw);
+        } catch (e) {
+            return defaultValue;
+        }
+    }
+}
+
+if (typeof GM_setValue === 'undefined') {
+    function GM_setValue(key, value) {
+        try {
+            localStorage.setItem(key, JSON.stringify(value));
+        } catch (e) {
+            // ignore errors
+        }
+    }
+}
+
+if (typeof GM_addStyle === 'undefined') {
+    function GM_addStyle(css) {
+        try {
+            const style = document.createElement('style');
+            style.textContent = css;
+            document.head.appendChild(style);
+        } catch (e) {
+            // ignore
+        }
+    }
+}
+// --- konec shimu GM_* ---
+
 (function () {
     'use strict';
 
