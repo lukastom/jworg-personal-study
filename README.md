@@ -29,7 +29,7 @@ Later, you can **import the same file** to restore your study progress on anothe
 
 ## Installation
 
-### Windows, Edge/Chrome/Firefox
+### Windows (Edge/Chrome/Firefox)
 
 1. **Install the Tampermonkey extension** for your browser:  
    - **Edge**: [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)  
@@ -50,8 +50,12 @@ Later, you can **import the same file** to restore your study progress on anothe
    - Tampermonkey automatically detects it and shows **Install** → click it  
    - After installation, restart the browser to ensure the script loads properly
   
-### iOs, Safari
+### iOS (Safari)
 
-1. Download "Userscripts" app.
-2. Allow it as and addon for Safari in Settings > Apps > Safari > Addons
-3. Download
+1. Download the **Userscripts** app from the App Store.
+2. Enable it as a Safari extension in **Settings → Safari → Extensions**.
+3. Place `jw-personal-study.user.js` into the **On My iPad → Userscripts** folder.
+4. Open **jw.org** in Safari.
+5. Tap the “aA” or "extensions" icon and enable the script under *Userscripts*.
+6. Refresh the page.
+
