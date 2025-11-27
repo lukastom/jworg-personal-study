@@ -29,6 +29,8 @@ Later, you can **import the same file** to restore your study progress on anothe
 
 ## Installation
 
+### Windows, Edge/Chrome/Firefox
+
 1. **Install the Tampermonkey extension** for your browser:  
    - **Edge**: [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)  
    - **Chrome**: [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)  
@@ -47,3 +49,9 @@ Later, you can **import the same file** to restore your study progress on anothe
      ```  
    - Tampermonkey automatically detects it and shows **Install** → click it  
    - After installation, restart the browser to ensure the script loads properly
+  
+### iOs, Safari
+
+1. Download "Userscripts" app.
+2. Allow it as and addon for Safari in Settings > Apps > Safari > Addons
+3. Download
