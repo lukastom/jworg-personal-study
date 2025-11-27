@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JW.org Personal Study
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.9
 // @description  JW.org Personal Study – checkbox + notes for videos, checkbox only for other materials, Bible books and chapters, export/import across languages.
 // @match        https://www.jw.org/*
 // @grant        GM_getValue
@@ -28,7 +28,8 @@
             exportBtn: '📤 Export',
             importBtn: '📥 Import',
             importSuccess: 'Import hotový.',
-            importErrorPrefix: 'Chyba při importu JSONu: '
+            importErrorPrefix: 'Chyba při importu JSONu: ',
+            studiedCountLabel: 'Prostudováno:'
         },
         en: {
             appName: 'JW.org Personal Study',
@@ -43,7 +44,8 @@
             exportBtn: '📤 Export',
             importBtn: '📥 Import',
             importSuccess: 'Import completed.',
-            importErrorPrefix: 'Error while importing JSON: '
+            importErrorPrefix: 'Error while importing JSON: ',
+            studiedCountLabel: 'Studied:'
         }
     };
 
@@ -77,8 +79,27 @@
         store = {};
     }
 
+    // span v panelu, kde se zobrazuje počet prostudovaných
+    let studiedCountSpan = null;
+
+    function getStudiedCount() {
+        let count = 0;
+        for (const key in store) {
+            if (!Object.prototype.hasOwnProperty.call(store, key)) continue;
+            const item = store[key];
+            if (item && item.studied) count++;
+        }
+        return count;
+    }
+
+    function refreshStudiedCountUI() {
+        if (!studiedCountSpan) return;
+        studiedCountSpan.textContent = `${t.studiedCountLabel} ${getStudiedCount()}`;
+    }
+
     function saveStore() {
         GM_setValue(STORAGE_KEY, JSON.stringify(store));
+        refreshStudiedCountUI();
     }
 
     function downloadBackupFile() {
@@ -339,6 +360,7 @@
         padding: 6px 8px;
         display: flex;
         gap: 4px;
+        align-items: center;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         font-size: 12px;
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -731,6 +753,11 @@
         const label = document.createElement('span');
         label.textContent = t.panelLabel;
 
+        const countSpan = document.createElement('span');
+        countSpan.className = 'jwvt-studied-count';
+        studiedCountSpan = countSpan;
+        refreshStudiedCountUI();
+
         const exportBtn = document.createElement('button');
         exportBtn.textContent = t.exportBtn;
 
@@ -780,6 +807,7 @@
         });
 
         panel.appendChild(label);
+        panel.appendChild(countSpan);
         panel.appendChild(exportBtn);
         panel.appendChild(importBtn);
         panel.appendChild(fileInput);
