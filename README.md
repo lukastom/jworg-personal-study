@@ -54,7 +54,7 @@ Later, you can **import the same file** to restore your study progress on anothe
 
 1. Download the **Userscripts** app from the App Store. Run it.
 2. Enable it as a Safari extension in **Settings → Safari → Extensions**. Allow it for all sites.
-3. Place `jw-personal-study.user.js` into the **On My iPad → Userscripts** folder.
+3. Place `jw-personal-study.user.js` into the **On My iPad → Userscripts** folder. (If you did not run the Userscripts app, you will not see the folder.)
 4. Open **jw.org** in Safari.
 5. Tap the “aA” or "extensions" icon and enable the script under *Userscripts*.
 6. Refresh the page.
